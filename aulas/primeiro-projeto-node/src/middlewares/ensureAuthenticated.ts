@@ -8,8 +8,12 @@ interface TokenPayload {
   sub: string;
 }
 
+interface IRequest extends Request {
+  header: any;
+}
+
 export default function ensureAuthenticated(
-  request: Request,
+  request: IRequest,
   response: Response,
   next: NextFunction,
 ): void {
